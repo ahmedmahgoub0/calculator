@@ -1,0 +1,35 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorOnPrimary">@color/brown</item>
+    </style>
+
+    <style name="Theme.Calculator" parent="Base.Theme.Calculator" />
+
+    <style name="Dopinoo">
+        <item name="fontFamily">@font/doppioone_regular</item>
+        <item name="fontWeight">400</item>
+    </style>
+
+    <style name="Dopinoo.PrevCalculation">
+        <item name="android:textColor">@color/dark_gray_2</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Dopinoo.CurrentCalculation">
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="Dopinoo.CalculatorButton">
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="Dopinoo.OperatorButton">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+</resources>
