@@ -40,9 +40,11 @@
     <TextView
         android:id="@+id/current_calculation"
         style="@style/Dopinoo.CurrentCalculation"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="end"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="@id/result_background"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +60,7 @@
         android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toTopOf="@id/second_row">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ac"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -86,7 +88,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/percent"
             style="@style/Dopinoo.OperatorButton"
             android:layout_width="76dp"
@@ -101,7 +103,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/division"
             style="@style/Dopinoo.OperatorButton"
             android:layout_width="76dp"
@@ -122,7 +124,7 @@
         android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toTopOf="@id/third_row">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/seven"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -136,7 +138,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/eight"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -150,7 +152,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/nine"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -164,7 +166,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/multiply"
             style="@style/Dopinoo.OperatorButton"
             android:layout_width="76dp"
@@ -185,7 +187,7 @@
         android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toTopOf="@id/fourth_row">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/four"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -199,7 +201,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/five"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -213,7 +215,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/six"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -227,14 +229,14 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/plus"
             style="@style/Dopinoo.OperatorButton"
             android:layout_width="76dp"
             android:layout_height="76dp"
             android:background="@drawable/circle_orange"
             android:gravity="center"
-            android:text="x"
+            android:text="+"
             android:textColor="@color/gray" />
     </LinearLayout>
 
@@ -247,7 +249,7 @@
         android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toTopOf="@id/last_row">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/one"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -261,7 +263,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/two"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -275,7 +277,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/three"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -289,7 +291,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/minus"
             style="@style/Dopinoo.OperatorButton"
             android:layout_width="76dp"
@@ -310,7 +312,7 @@
         android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/change_sign"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -324,7 +326,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/zero"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -338,7 +340,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/point"
             style="@style/Dopinoo.CalculatorButton"
             android:layout_width="76dp"
@@ -352,7 +354,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/equal"
             style="@style/Dopinoo.OperatorButton"
             android:layout_width="76dp"

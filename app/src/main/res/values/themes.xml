@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/orange</item>
@@ -23,11 +23,13 @@
     </style>
 
     <style name="Dopinoo.CalculatorButton">
+        <item name="android:outlineSpotShadowColor" tools:targetApi="28">@color/transparent</item>
         <item name="android:textColor">@color/brown</item>
         <item name="android:textSize">22sp</item>
     </style>
 
     <style name="Dopinoo.OperatorButton">
+        <item name="android:outlineSpotShadowColor" tools:targetApi="28">@color/transparent</item>
         <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">22sp</item>
     </style>
