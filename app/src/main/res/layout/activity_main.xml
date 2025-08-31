@@ -1,368 +1,380 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:fillViewport="true"
+    android:orientation="vertical"
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/result_background"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/rounded_32"
-        app:layout_constraintBottom_toTopOf="@id/ac_row"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/drag_bar"
-        android:layout_width="32dp"
-        android:layout_height="4dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/rounded_8"
-        app:layout_constraintBottom_toBottomOf="@id/result_background"
-        app:layout_constraintEnd_toEndOf="@id/result_background"
-        app:layout_constraintStart_toStartOf="@id/result_background" />
-
-    <TextView
-        android:id="@+id/previous_calculation"
-        style="@style/Dopinoo.PrevCalculation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@id/current_calculation"
-        app:layout_constraintEnd_toEndOf="@id/current_calculation"
-        tools:text="35 + 12" />
-
-    <TextView
-        android:id="@+id/current_calculation"
-        style="@style/Dopinoo.CurrentCalculation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:gravity="end"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="@id/result_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="0" />
-
-    <LinearLayout
-        android:id="@+id/ac_row"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintBottom_toTopOf="@id/second_row">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/ac"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="AC" />
+        android:layout_height="wrap_content">
 
         <View
-            android:layout_width="0dp"
+            android:id="@+id/result_background"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <ImageView
-            android:id="@+id/clear_char"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:padding="24dp"
-            android:src="@drawable/arroww"
-            app:tint="@color/brown" />
+            android:minHeight="300dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_32"
+            app:layout_constraintBottom_toTopOf="@id/ac_row"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:id="@+id/drag_bar"
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/rounded_8"
+            app:layout_constraintBottom_toBottomOf="@id/result_background"
+            app:layout_constraintEnd_toEndOf="@id/result_background"
+            app:layout_constraintStart_toStartOf="@id/result_background" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/percent"
-            style="@style/Dopinoo.OperatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_orange"
-            android:gravity="center"
-            android:text="%"
-            android:textColor="@color/gray" />
+        <TextView
+            android:id="@+id/previous_calculation"
+            style="@style/Dopinoo.PrevCalculation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@id/current_calculation"
+            app:layout_constraintEnd_toEndOf="@id/current_calculation"
+            app:layout_constraintStart_toStartOf="@+id/current_calculation"
+            tools:text="35 + 12" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/division"
-            style="@style/Dopinoo.OperatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_orange"
-            android:gravity="center"
-            android:text="/"
-            android:textColor="@color/gray" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/second_row"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintBottom_toTopOf="@id/third_row">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/seven"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="7" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/eight"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="8" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nine"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="9" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/multiply"
-            style="@style/Dopinoo.OperatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_orange"
-            android:gravity="center"
-            android:text="x"
-            android:textColor="@color/gray" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/third_row"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintBottom_toTopOf="@id/fourth_row">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/four"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="4" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/five"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="5" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/six"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="6" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/plus"
-            style="@style/Dopinoo.OperatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_orange"
-            android:gravity="center"
-            android:text="+"
-            android:textColor="@color/gray" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/fourth_row"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintBottom_toTopOf="@id/last_row">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/one"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="1" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/two"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="2" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/three"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="3" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/minus"
-            style="@style/Dopinoo.OperatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_orange"
-            android:gravity="center"
-            android:text="-"
-            android:textColor="@color/gray" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/last_row"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="32dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/change_sign"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="±" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/zero"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
+        <TextView
+            android:id="@+id/current_calculation"
+            style="@style/Dopinoo.CurrentCalculation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="end"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="@id/result_background"
+            app:layout_constraintEnd_toEndOf="parent"
             android:text="0" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+        <LinearLayout
+            android:id="@+id/ac_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@id/second_row">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/point"
-            style="@style/Dopinoo.CalculatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_white"
-            android:gravity="center"
-            android:text="." />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ac"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="AC" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/equal"
-            style="@style/Dopinoo.OperatorButton"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:background="@drawable/circle_orange"
-            android:gravity="center"
-            android:text="="
-            android:textColor="@color/gray" />
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/clear_char"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:padding="24dp"
+                android:src="@drawable/arroww"
+                app:tint="@color/brown" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/percent"
+                style="@style/Dopinoo.OperatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_orange"
+                android:gravity="center"
+                android:text="%"
+                android:textColor="@color/gray" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/division"
+                style="@style/Dopinoo.OperatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_orange"
+                android:gravity="center"
+                android:text="/"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/second_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@id/third_row">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/seven"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="7" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/eight"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="8" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nine"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="9" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/multiply"
+                style="@style/Dopinoo.OperatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_orange"
+                android:gravity="center"
+                android:text="x"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/third_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@id/fourth_row">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/four"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="4" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/five"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="5" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/six"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="6" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/plus"
+                style="@style/Dopinoo.OperatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_orange"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fourth_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintBottom_toTopOf="@id/last_row">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/one"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/two"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="2" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/three"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="3" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/minus"
+                style="@style/Dopinoo.OperatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_orange"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/last_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/change_sign"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="±" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/zero"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="0" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/point"
+                style="@style/Dopinoo.CalculatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_white"
+                android:gravity="center"
+                android:text="." />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/equal"
+                style="@style/Dopinoo.OperatorButton"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/circle_orange"
+                android:gravity="center"
+                android:text="="
+                android:textColor="@color/gray" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
